@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block main_content %}
+    {% if  (hobbies | length) ==1%}
+        <h1>My main hobby is:</h1>
+        {{ hobbies[0] }}
+        <br><br>
+    {% else %}
+        <h1>I have {{ hobbies | length }} main hobbies:</h1>
+        {% for hobby in hobbies %}
+            <li>{{ hobby }}</li>
+            <br>
+        {% endfor %}
+    {% endif %}
+    {%  include 'include_hob.html' %}
+{% endblock %}
+

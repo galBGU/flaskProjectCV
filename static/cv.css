@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial Narrow, sans-serif	;
+ }
+
+h5{
+    font-size: 100px;
+    font-family:Cookie;
+    text-align: center;
+    height: 10px;
+}
+
+body{
+    background-color: #F1FAEE;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+    .itemMame {
+        float: left;
+        padding: 0px;
+        width: 40%;
+        grid-area: header;
+        font-family: Cookie;
+        font-size: 230px;
+        color: #1D3557;
+    }
+
+    .itemAbout {
+        float: left;
+        padding: 0px;
+        width: 100%;
+        grid-area: details;
+        border-radius: 20px;
+        text-align: center;
+        background-image: linear-gradient(#457B9D, #F1FAEE);
+         }
+
+    .itemJob1 {
+        float: left;
+        padding: 20px;
+        width: 25%;
+        grid-area: job1;
+        text-align: center;
+        border-style: hidden inset hidden  hidden;
+        border-radius: 10px;
+
+       }
+
+    .itemJob2 {
+        float: left;
+        padding: 20px;
+        width: 25%;
+        grid-area: job2;
+        text-align: center;
+ border-style: hidden inset hidden  hidden;
+        border-radius: 10px;
+
+         }
+
+    .itemJob3 {
+        float: left;
+        padding: 20px;
+        width: 25%;
+        grid-area: job3;
+        text-align: center;
+        border-style: hidden inset hidden  hidden;
+        border-radius: 10px;
+        }
+
+    .itemJob4 {
+        float: left;
+        padding: 20px;
+        width: 25%;
+        grid-area: job4;
+        text-align: center;
+
+        }
+
+    .itemConDetails {
+        float: left;
+        text-align: center;
+        padding: 15px;
+        width: 50%;
+        grid-area: contactDetails;
+
+    }
+
+    .itemConMail {
+        float: left;
+        text-align: center;
+        padding: 15px;
+        width: 50%;
+        grid-area: contactMail;
+        }
+
+    .itemContact {
+        float: right;
+        padding: 15px;
+        width: 100%;
+        height:10px;
+        grid-area: contactButton;
+        font-size: 100px;
+        text-align: right;
+        animation:
+        contactMove 0.5s infinite;
+    }
+
+   .itemSelfImage {
+        float: right;
+        width: 50%;
+        grid-area: selfImage;
+   }
+
+    .itemTitleWork{
+        font-family: Cookie;
+        font-size: 100px;
+        float: left;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+       .itemTitleContact{
+        font-family: Cookie;
+        font-size: 100px;
+        float: left;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .itemSpace{
+        float: left;
+        width: 10%;
+    }
+
+@keyframes contactMove {
+  0%   {transform: translate(0,0);}
+  25%  {transform: translate(0px,5px);}
+  50%  {transform: translate(0px,10px);}
+  75%  {transform: translate(0px,5px);}
+  100% {transform: translate(0px,0px);}
+}
+
+
+

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>cv</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cv.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static',filename='jsExample.js') }}"></script>
+</head>
+<body onload="loadEntryPage()">
+<div class="itemContact">
+    <a href="/contactList" target="_blank">
+        <button name="Contact" type="button"
+                style="background-color:#E63946;
+                        border-color:#E63946;
+                        border-style:outset;
+                        font-family: Cookie;
+                        font-size:35px;
+                        color:#F1FAEE;
+                        width:150px; height:40px">
+            Contact List
+        </button>
+    </a>
+</div>
+
+{% block main_content %}
+<div class="grid-container">
+    <div class="itemSpace"><br></div>
+
+    <div class="itemMame" id="entry"></div>
+
+    <div class="itemSelfImage">
+        <img src="{{ url_for('static',filename='gal2.png') }}" alt="Self Image" width="80%">
+    </div>
+
+    <div class="itemAbout">
+        <h5 onmouseover="style.color='#A8DADC'" onmouseout="style.color='black'"> Nice to meet</h5>
+        <body>
+        <br>
+        <h1>
+            My name is Gal Shaked, <br> I'm a 3-nd year student in Industrial Engineering and Management at Ben Gurion
+            University.<br/>
+            When people see me for the first time they see a woman that always smiles. </br>
+            When people really know me, they see that I'm creative, a team player, and a self-learner,</br>
+            looking for challenges and not afraid of hard work.
+        </h1>
+        </body>
+    </div>
+
+    <div class="itemTitleWork">
+        <h5 onmouseover="style.color='#A8DADC'" onmouseout="style.color='black'">Work Experience </h5>
+    </div>
+
+    <div class="itemJob1">
+        <h1>Support Engineer</h1><br/>
+        <h2>Optibus</h2>
+        <h3>2020-Today</h3>
+        <a href="https://www.optibus.com/" target="_blank">
+            <img src="{{ url_for('static' , filename='Picture1.png') }}" width="90%" alt="optibus">
+        </a>
+
+    </div>
+
+
+    <div class="itemJob2">
+        <h1>projects manager and Board member</h1>
+        <h2>Kanfey Ruach</h2>
+        <h3>2017-Today</h3>
+        <a href="https://kanfeyruach.org.il/" target="_blank">
+            <img src="{{ url_for('static' , filename='kanfeyRuach logo.png') }}" width="80%" alt="Kanfey Ruach" class="image">
+        </a>
+    </div>
+
+
+    <div class="itemJob3">
+        <h1>Website design and digital marketing</h1>
+        <h2>IDBM</h2>
+        <h3>2016-2017</h3>
+        <a href="https://idanbar.com/" target="_blank">
+            <img src="{{ url_for('static' , filename='idbm-logo.png') }}" width="80%" alt="IDBM">
+        </a>
+    </div>
+
+    <div class="itemJob4">
+        <h1>Marketing and shipping manager</h1>
+        <h2>Yochi-Asparagus</h2>
+        <h3>2015-2016</h3>
+        <a href="https://www.y-delivery.com/" target="_blank">
+            <img src="{{ url_for('static' , filename='yochi logo.png') }}" width="70%" alt="Yochi">
+        </a>
+    </div>
+
+    <div class="itemTitleContact">
+        <h5 onmouseover="style.color='#A8DADC'" onmouseout="style.color='black'">Contact Me</h5>
+    </div>
+
+    <div class="itemConDetails">
+        <h1>
+            +972(50)9564861 <br><br>
+            galshaked22@gmail.com <br><br>
+            Rahvat Alexandroni 15/11 Be'er Sheva
+        </h1>
+    </div>
+
+    <div class="itemConMail">
+
+        <form action="galshaked22@gmail.com"
+              method="POST"
+              enctype="multipart/form-data"
+              name="EmailForm">
+            <h2>Name:</h2>
+            <input type="text" size="20" name="Contact-Name"><br>
+            <h2>Email:</h2>
+            <input type="email" name="Contact-Email"><br>
+            <h2>Message:</h2>
+            <textarea name="Contact-Message" rows="8″ cols=" 20″>
+                    </textarea><br><br>
+            <button type="submit" value="Submit" style="font-size:25px;
+                                                                background-color:#E63946;
+                                                                color:#F1FAEE;
+                                                                font-family: Cookie;
+                                                                border-color: #E63946;
+">Send
+            </button>
+        </form>
+
+
+    </div>
+
+</div>
+{% endblock %}
+
+</body>
+</html>
+
