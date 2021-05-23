@@ -8,7 +8,15 @@
     <script src="{{ url_for('static',filename='jsExample.js') }}"></script>
 </head>
 <body onload="loadEntryPage()">
+
+{% if session['username']%}
+    <h2>Hello {{ session['username'] }}!</h2>
+{% else %}
+    <h2>Hello guest!</h2>
+{% endif %}
+
 <div class="itemContact">
+
     <a href="/contactList" target="_blank">
         <button name="Contact" type="button"
                 style="background-color:#E63946;
@@ -21,6 +29,7 @@
             Contact List
         </button>
     </a>
+
 </div>
 
 {% block main_content %}

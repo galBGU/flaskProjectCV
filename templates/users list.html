@@ -10,7 +10,11 @@
 </head>
 <script src="../static/fetch.js"></script>
 <body>
-
+{% if session['username']%}
+    <h2>Hello {{ session['username'] }}!</h2>
+{% else %}
+    <h2>Hello guest!</h2>
+{% endif %}
 <main>
     <h1>The Users List: <br></h1>
 </main>

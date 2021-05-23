@@ -1,0 +1,29 @@
+*{
+    padding: 5px;
+    text-align: center;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.search {
+    width: 50%;
+    float: left;
+}
+
+.regis {
+    width: 50%;
+    float: left;
+}
+
+.result{
+    font-size: 20px;
+    color: #1D3557;
+}
+
+.fas {
+    color: #457B9D;
+}
