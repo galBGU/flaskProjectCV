@@ -1,7 +1,44 @@
 from flask import Flask, redirect, url_for, render_template, request, session
+import mysql.connector
 
 app = Flask(__name__)
 app.secret_key = '123456'
+
+
+
+
+
+def interact_db(query, query_type: str):
+    return_value = False
+    connection = mysql.connector.connect(host='localhost',
+                                         user='root',
+                                         passwd='root',
+                                         database='ex10')
+    cursor = connection.cursor(named_tuple=True)
+    cursor.execute(query)
+
+    if query_type == 'commit':
+        connection.commit()
+        return_value = True
+
+    if query_type == 'fetch':
+        query_result = cursor.fetchall()
+        return_value = query_result
+
+    connection.close()
+    cursor.close()
+    return return_value
+
+
+##assignment10 page
+from blueprints.pages.assignment10.assignment10 import assignment10
+app.register_blueprint(assignment10)
+
+
+
+
+
+
 
 
 @app.route('/index')
@@ -83,6 +120,15 @@ def logout():
     session.pop('username')
     session.pop('password')
     return redirect(url_for('assignment9'))
+
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="root"
+)
+
+print(mydb)
 
 
 if __name__ == '__main__':

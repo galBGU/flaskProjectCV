@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment10</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cv.css') }}">
+
+</head>
+<body>
+
+
+
+
+    <h3>Insert User:</h3>
+    <form method="POST" action="/insert_user">
+        <input name="Name" type="text" placeholder="Name">
+        <input name="ID" type="text" placeholder="ID">
+        <input type="submit">
+    </form>
+
+    <h3>Delete User:</h3>
+    <form method="POST" action="/delete_user">
+        <input name="ID" type="text" placeholder="ID">
+        <input type="submit">
+    </form>
+
+
+    <h3>Update User:</h3>
+    <form method="POST" action="/update_user">
+        <input name="ID" type="text" placeholder="The user's ID">
+        <input name="new_name" type="text" placeholder="The updated name">
+        <input type="submit">
+    </form>
+
+    <hr>
+    <h2>Users:</h2>
+    <ul>
+        {% for user in users %}
+            <li style="font-size: large">User's name: {{ user.Name }} | user's ID: {{ user.ID }}</li><br>
+        {% endfor %}
+    </ul>
+
+
+
+
+
+</body>
+</html>
