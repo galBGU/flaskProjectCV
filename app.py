@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template, request, session
+from flask import Flask, redirect, url_for, render_template, request, session, jsonify
 import mysql.connector
 
 app = Flask(__name__)
@@ -120,6 +120,55 @@ def logout():
     session.pop('username')
     session.pop('password')
     return redirect(url_for('assignment9'))
+
+
+
+#--------------------------------
+#--------assignment 11-----------
+
+@app.route('/assignment11/', defaults={'database': 'users'})
+@app.route('/assignment11/<database>')
+def assignment11users(database):
+    if database == 'users':
+        query = "SELECT * FROM users order by NAME"
+        query_result = interact_db(query=query, query_type='fetch')
+        response = {}
+        if len(query_result) !=0:
+           response = query_result
+
+        response = jsonify(response)
+        return response
+    else:
+        return {}
+
+
+@app.route('/assignment11/users/selected/', defaults={'SOME_USER_ID': '0'})
+@app.route('/assignment11/users/selected/<int:SOME_USER_ID>')
+def userID(SOME_USER_ID):
+    if SOME_USER_ID == '0':
+        query = "SELECT * FROM users WHERE ID='1'"
+        query_result = interact_db(query=query, query_type='fetch')
+        response = query_result[0]
+        response = jsonify(response)
+        return response
+
+    query = "SELECT * FROM users WHERE ID='%s'" % SOME_USER_ID
+    query_result = interact_db(query=query, query_type='fetch')
+
+    response = {}
+    if len(query_result) != 0 and SOME_USER_ID!=0:
+        response = query_result[0]
+        response = jsonify(response)
+        return response
+    else:
+        error = 'The user is not exist'
+        error = jsonify(error)
+        return error
+
+
+#--------assignment 11-----------
+#--------------------------------
+
 
 
 mydb = mysql.connector.connect(
